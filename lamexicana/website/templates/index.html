@@ -1,0 +1,33 @@
+{%extends "base.html"%}
+{%load i18n%}
+{%block top%}
+<a id="join" href="/new/">{%trans "¡Sumate a nuestro proyecto!"%}</a>
+<ul id="menu">
+    <li>
+        <a href="/">{%trans "Inicio"%}</a>
+    </li>
+    <li>
+        <a href="#">{%trans "Objetivo"%}</a>
+    </li>
+    <li>
+        <a target="_blank" href="http://pikhub.com/lamexicana/">{%trans "Fotos"%}</a>
+    </li>
+</ul>
+{%endblock%}
+{%block content%}
+<img id="logo" src="{{MEDIA_URL}}/img/logo.jpg" alt="logo" width="240" />
+<div id="photo" style="background:url({{MEDIA_URL}}/img/photo.png) center center no-repeat">
+    <a id="add_photos" href="http://pikhub.com/lamexicana/add/" target="_blank">{%trans "¡Sube tus photos!"%}</a>
+</div>
+<div class="clear"></div>
+<div id="articles">
+    {%for article in articles%}
+    <div id="article">
+        <h3 id="title">&#8220;{{article.title}}</h3>
+        <p id="content">{{article.content}}&#8221;</p>
+        <p id="source" class="right">{{article.source}}</p>
+    </div>
+    {%endfor%}
+    <div class="clear"></div>
+</div>
+{%endblock%}

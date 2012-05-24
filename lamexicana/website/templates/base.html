@@ -1,0 +1,27 @@
+{%load i18n%}
+<!DOCTYPE HTML>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <title>{%trans "La mexicana"%}</title>
+    <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}/css/style.css" media="all" />
+</head>
+<body>
+    <div id="container">
+        <div id="top">
+            {%block top%}
+            {%endblock%}
+            <div class="clear"></div>
+        </div>
+        <div id="center">
+            {%block content%}
+            {%endblock%}
+            <div class="clear"></div>
+        </div>
+        <div id="bottom">
+            &copy; {{year}} {{product_name}}
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+</html>

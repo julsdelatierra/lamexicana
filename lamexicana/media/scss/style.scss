@@ -1,0 +1,190 @@
+$media:/media;
+$smallest:10pt;
+$small:12pt;
+$medium:14pt;
+$big:16pt;
+$biggest:18pt;
+$white:#FAFAFA;
+$darkgray:#D8D8D8;
+$lightgray:#EFEFEF;
+$purple:#CD3178;
+$green:#91BE57;
+$black:#000;
+@mixin border-radius($radius){
+    -moz-border-radius:$radius;
+    -webkit-border-radius:$radius;
+    -o-border-radius:$radius;
+    border-radius:$radius;
+}
+@mixin around-box-shadow($color){
+    -moz-box-shadow: 0 0 5px $color;
+    -webkit-box-shadow: 0 0 5px $color;
+    box-shadow: 0 0 5px $color;
+}
+.clear{
+    clear:both;
+}
+.purple{
+    color:$purple;
+}
+.center{
+    text-align:center;
+}
+.big{
+    font-size:$biggest;
+}
+*{
+    font-family:arial;
+    padding:0;
+    margin:0;
+    border:0;
+}
+body{
+    background:url($media/img/bg.png);
+}
+#container{
+    width:960px;
+    margin:30px auto;
+    #top{
+        padding:10px;
+        #join{
+            float:left;
+            clear:both;
+            background:$purple;
+            padding:20px;
+            @include border-radius(4px);
+            color:$white;
+            text-decoration:none;
+            width:200px;
+            @include around-box-shadow($purple);
+            text-align:center;
+        }
+        #join:hover{
+            background:$green;
+            @include around-box-shadow($green);
+        }
+        ul#menu{
+            list-style:none;
+            padding:20px 0;
+            font-size:$small;
+            float:right;
+            li{
+                float:left;
+                margin-left:10px;
+                a{
+                    color:$purple;
+                    text-decoration:none;
+                    text-shadow: 0 0 5px $darkgray;
+                }
+                a:hover{
+                    color:$green;
+                    text-decoration:underline;
+                }
+            }
+        }
+        margin-bottom:10px;
+    }
+    #center{
+        padding:10px;
+        background:$white;
+        @include border-radius(6px);
+        @include around-box-shadow($black);
+        #logo{
+            float:left;
+        }
+        #photo{
+            @include border-radius(6px);
+            float:right;
+            width:690px;
+            height:266px;
+            a{
+                font-size:$smallest;
+                float:right;
+                clear:both;
+                padding:15px;
+                background:$lightgray;
+                color:$black;
+            }
+            a:hover{
+                background:$green;
+                color:$white;
+            }
+        }
+        #articles{
+            margin:20px 0 0;
+            #article{
+                width:215px;
+                padding:0 10px;
+                float:left;
+                p#content{
+                    margin-top:5px;
+                    font-size:$smallest;
+                }
+                p#source{
+                    margin-top:5px;
+                    text-align:right;
+                    color:#a8a8a8;
+                    font-size:$smallest;
+                }
+            }
+        }
+        h1{
+            text-align:left;
+        }
+        p{
+            text-align:left;
+        }
+        form{
+            table{
+                width:700px;
+                border:20px;
+                tr{
+                    th{
+                        width:200px;
+                        font-size:$big;
+                    }
+                    td{
+                        width:500px;
+                        font-size:$big;
+                        input[type="text"]{
+                            width:100%;
+                            padding:10px;
+                            border:1px $lightgray solid;
+                            font-size:$big;
+                        }
+                        input[type="text"]:focus{
+                            outline:none;
+                            border:1px $green solid;
+                            @include around-box-shadow($green);
+                        }
+                        input{
+                            font-size:$big;
+                        }
+                        input[type="submit"]{
+                            padding:10px 20px;
+                            border:1px $lightgray solid;
+                            background:$green;
+                            color:$white;
+                            @include border-radius(4px);
+                            cursor:pointer;
+                        }
+                        input[type="button"]{
+                            padding:10px 20px;
+                            border:1px $lightgray solid;
+                            background:$lightgray;
+                            color:$black;
+                            @include border-radius(4px);
+                            cursor:pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #bottom{
+        margin:10px;
+        text-align:center;
+        color:#8c8c8c;
+        font-size:$smallest;
+    }
+}

@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%load i18n%}
+{%block content%}
+    <h1 class="center">{%trans "¡Gracias por registrate!"%}</h1>
+    <br />
+    <p class="center">
+        {%blocktrans%}
+            Te estamos redireccionado a la página de inicio, si esto no sucede pronto.
+        {%endblocktrans%}
+        <a href="/">{%trans 'Haz clic aquí'%}</a>.
+    </p>
+    <script type="text/javascript">
+        setInterval("location.href='/'",3000);
+    </script>
+{%endblock%}
